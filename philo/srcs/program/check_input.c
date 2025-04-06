@@ -6,17 +6,17 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:05:36 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/01 15:06:23 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/03 09:39:39 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h"
+#include "../../includes/philo.h"
 
 static int input_content (char *str);
 
 int check_input (char **argv)
 {
-    if (input_content (argv[1]) == 0 || ft_atoi (argv[1]) <= 0 || ft_atoi (argv[1]) > 200)
+    if (input_content (argv[1]) == 0 || ft_atoi (argv[1]) <= 0 || ft_atoi (argv[1]) > PHILO_MAX)
         return (1);
     if (input_content (argv[2]) == 0 ||  ft_atoi (argv[2]) <= 0)
         return (2);

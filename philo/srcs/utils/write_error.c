@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   write_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 18:00:53 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/03 07:48:15 by aaljazza         ###   ########.fr       */
+/*   Created: 2025/04/03 08:44:56 by aaljazza          #+#    #+#             */
+/*   Updated: 2025/04/05 17:16:13 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-int	ft_atoi(char *str)
+void    write_error(char *str)
 {
-	unsigned long long	nb;
-	int					sign;
-	int					i;
-
-	nb = 0;
-	sign = 1;
-	i = 0;
     if (str)
     {
-        while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' 
-            || str[i] == '\f' || str[i] == '\r')
-            i++;
-        if (str[i] == '-')
-            sign = -1;
-        if (str[i] == '-' || str[i] == '+')
-            i++;
-        while (str[i] >= '0' && str[i] <= '9')
+        int i;
+        i = 0;
+        while (str[i])
         {
-            nb = nb * 10 + (str[i] - '0');
+            write (2, &str[i], 1);
             i++;
         }
+        write (2, "\n", 1);
     }
-	return (sign * nb);
 }
