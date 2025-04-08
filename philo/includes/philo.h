@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/06 15:00:45 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/06 15:11:34 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ void forks_init(pthread_mutex_t *forks, int num_of_forks);
 void    philos_init (t_philo *philo, t_program *program, pthread_mutex_t *forks, char **argv);
 
 // *** continue initialize the philo structure using the user input ***
-input_init (pthread_t *philo,char **argv);
+void input_init (t_philo *philo,char **argv);
 
 // *** get the current time from a device ***
-void    ft_current_time();
+size_t    ft_current_time();
 #endif

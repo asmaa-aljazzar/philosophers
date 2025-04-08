@@ -28,13 +28,15 @@ OBJS_DIR	=	objs/
 INIT_DIR	=	init/
 
 UTILS_DIR	=	$(SRCS_DIR)utils/ft_atoi.c\
-				$(SRCS_DIR)utils/write_error.c
+				$(SRCS_DIR)utils/write_error.c\
+				$(SRCS_DIR)utils/ft_current_time.c\
 
 PROGRAM_DIR	=	$(SRCS_DIR)program/check_input.c\
 				$(SRCS_DIR)program/main.c\
 				$(SRCS_DIR)program/$(INIT_DIR)program_init.c\
 				$(SRCS_DIR)program/$(INIT_DIR)forks_init.c\
 				$(SRCS_DIR)program/$(INIT_DIR)philos_init.c\
+				$(SRCS_DIR)program/$(INIT_DIR)input_init.c\
 
 SRCS	=	$(UTILS_DIR) $(PROGRAM_DIR)
 

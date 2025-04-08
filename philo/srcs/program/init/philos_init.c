@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:49:06 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/06 15:00:31 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/06 15:17:43 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void    philos_init (t_philo *philo, t_program *program, pthread_mutex_t *forks,
         philo[i].pasta_lock = &program->pasta_lock;
         philo[i].write_lock = &program->write_lock;
         philo[i].dead_lock = &program->dead_lock;
+        philo[i].start_time = ft_current_time();
+        philo[i].last_meal = ft_current_time();
         i++;
-}
+    }
 }
