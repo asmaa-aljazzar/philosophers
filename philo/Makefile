@@ -22,21 +22,32 @@ OBJS_DIR	=	objs/
 # Source Files
 
 #	srcs/
-#	|-second/
-#	|-third/
+#	|- program/
+#		|- init/
+#		|- threads/ 
+#	|- utils/
 
-INIT_DIR	=	init/
+INIT_DIR	=	$(SRCS_DIR)program/init/input_init.c\
+				$(SRCS_DIR)program/init/forks_init.c\
+				$(SRCS_DIR)program/init/philos_init.c\
+				$(SRCS_DIR)program/init/program_init.c\
 
 UTILS_DIR	=	$(SRCS_DIR)utils/ft_atoi.c\
 				$(SRCS_DIR)utils/write_error.c\
 				$(SRCS_DIR)utils/ft_current_time.c\
 
-PROGRAM_DIR	=	$(SRCS_DIR)program/check_input.c\
+PHILO_ROUTINE_DIR	=	$(SRCS_DIR)program/threads/philo_routine/philo_routine.c\
+						$(SRCS_DIR)program/threads/philo_routine/actions.c
+
+THREADS_DIR	=	$(SRCS_DIR)program/threads/monitoring.c\
+				$(SRCS_DIR)program/threads/thread_create.c\
+				$(PHILO_ROUTINE_DIR)
+
+PROGRAM_DIR	=	$(INIT_DIR)\
+				$(THREADS_DIR)\
 				$(SRCS_DIR)program/main.c\
-				$(SRCS_DIR)program/$(INIT_DIR)program_init.c\
-				$(SRCS_DIR)program/$(INIT_DIR)forks_init.c\
-				$(SRCS_DIR)program/$(INIT_DIR)philos_init.c\
-				$(SRCS_DIR)program/$(INIT_DIR)input_init.c\
+				$(SRCS_DIR)program/destroy_all.c\
+				$(SRCS_DIR)program/check_input.c\
 
 SRCS	=	$(UTILS_DIR) $(PROGRAM_DIR)
 

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_init.c                                       :+:      :+:    :+:   */
+/*   destroy_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/06 14:31:58 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/09 11:42:58 by aaljazza         ###   ########.fr       */
+/*   Created: 2025/04/10 12:01:26 by aaljazza          #+#    #+#             */
+/*   Updated: 2025/04/10 12:15:45 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/philo.h"
+#include "../../includes/philo.h"
 
-void input_init(t_philo *philo,char **argv)
+void    destroy_all (char *str, t_program *program, pthread_mutex_t *forks)
 {
-    philo->num_of_philos = ft_atoi (argv[1]);
-    philo->time_to_die = ft_atoi (argv[2]);
-    philo->time_to_eat = ft_atoi (argv[3]);
-    philo->time_to_sleep = ft_atoi (argv[4]);
-    if (argv[5])
-        philo->num_times_to_eat = ft_atoi (argv[5]);
-    else
-        philo->num_times_to_eat = -42;
+    int i;
+    i = 0;
+    while (i < program->philos[0].num_of_philos)
+    {
+        pthread_mutex_destroy (&forks[i]);
+        i++;
+    }
+    if (program)
+    {
+    }
+    write_error (str);
 }

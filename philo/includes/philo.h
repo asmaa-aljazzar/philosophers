@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/06 15:11:34 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:09:16 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,17 @@ void    philos_init (t_philo *philo, t_program *program, pthread_mutex_t *forks,
 // *** continue initialize the philo structure using the user input ***
 void input_init (t_philo *philo,char **argv);
 
+// *** create all threads with routine function ***
+int  thread_create(t_program *program, pthread_mutex_t *forks);
+
+// *** routine function for philosophers threads***
+void    *philo_routine (void *philo_ptr);
+
+// ** routine function for observer thread ***
+void    *monitoring (void *philos);
+
 // *** get the current time from a device ***
 size_t    ft_current_time();
+// *** destroy all created threads and mutex ***
+void    destroy_all (char *str, t_program *program, pthread_mutex_t *forks);
 #endif

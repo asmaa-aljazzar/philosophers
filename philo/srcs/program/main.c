@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:07:11 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/05 17:19:40 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:24:19 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ int	main(int argc, char **argv)
 			program_init (&program, philos);
 			forks_init (forks, ft_atoi(argv[1]));
 			philos_init (philos, &program, forks, argv);
-			// thread_create(&program, forks);
-			// destory_all(NULL, &program, forks);
+			thread_create(&program, forks);
+			destroy_all(NULL, &program, forks);
 		}
 		else
 		{
-			write_error ("\e[31m	[ invalid input ]	\e[0m");
+			write_error ("\e[31m [ invalid input ] \e[0m");
 		}
 	}
 	else
-		write_error ("\e[31m	should be 4 or 5 arguments	\e[0m");
+		write_error ("\e[31m should be 4 or 5 arguments	\e[0m");
 	return 0;
 }
 
