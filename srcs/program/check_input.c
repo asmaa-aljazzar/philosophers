@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 18:05:36 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/03 09:39:39 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/14 18:58:20 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 static int input_content (char *str);
 
-int check_input (char **argv)
+int check_input(char **argv)
 {
     if (input_content (argv[1]) == 0 || ft_atoi (argv[1]) <= 0 || ft_atoi (argv[1]) > PHILO_MAX)
         return (1);
-    if (input_content (argv[2]) == 0 ||  ft_atoi (argv[2]) <= 0)
+    if (input_content (argv[2]) == 0 ||  ft_atoi (argv[2]) < 60)
         return (2);
-    if (input_content (argv[3]) == 0 || ft_atoi (argv[3]) <= 0)
+    if (input_content (argv[3]) == 0 || ft_atoi (argv[3]) < 60)
         return (3);
-    if (input_content (argv[4]) == 0 || ft_atoi (argv[4]) <= 0)
+    if (input_content (argv[4]) == 0 || ft_atoi (argv[4]) < 60)
         return (4);
     if ( argv[5] && (input_content (argv[5]) == 0 || ft_atoi (argv[5]) < 0 )) // if argv[5] exist but < 0
             return (5);
     return (0);
 }
 
-// *** check the content of the input ***
+// *** check if the content of the input is only numbers ***
 //- return 1 when sucess.
 //- return 0 in case of the number contain a non-numeric character
-static int input_content (char *str)
+static int input_content(char *str)
 {
     int i;
     i = 0;

@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/10 12:09:16 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/14 19:23:35 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,40 @@ void    philos_init (t_philo *philo, t_program *program, pthread_mutex_t *forks,
 // *** continue initialize the philo structure using the user input ***
 void input_init (t_philo *philo,char **argv);
 
+// *** destroy all created mutex in program structure and forks array ***
+void    destroy_all (char *str, t_program *program, pthread_mutex_t *forks);
+
 // *** create all threads with routine function ***
 int  thread_create(t_program *program, pthread_mutex_t *forks);
 
-// *** routine function for philosophers threads***
+// *** routine function for philosophers threads ***
 void    *philo_routine (void *philo_ptr);
 
-// ** routine function for observer thread ***
+// *** routine function for observer thread ***
+//  if the philo dead or all philos eats the num of meanl.
+//  - return a pointer to the philo.
 void    *monitoring (void *philos);
 
 // *** get the current time from a device ***
 size_t    ft_current_time();
-// *** destroy all created threads and mutex ***
-void    destroy_all (char *str, t_program *program, pthread_mutex_t *forks);
+
+// *** eating action ***
+void eating(t_philo *philo);
+
+// *** sleeping action ***
+void sleeping(t_philo *philo);
+
+// *** thinking action ***
+void thinking(t_philo *philo);
+
+// *** check if one of philos is dead ***
+// - return 1 when death happened.
+int is_dead(t_philo *philos);
+
+// *** check all philos at least ate the num of meals ***
+// - return 1 when all eat the num of meals.
+int is_all_eat(t_philo *philos);
+
+// *** print a messages to descripe the simulation ***
+void    print_msg(char *str, t_philo *philo);
 #endif

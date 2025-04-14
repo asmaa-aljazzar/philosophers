@@ -6,7 +6,13 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:02:12 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/10 12:02:13 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/14 17:45:30 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../includes/philo.h"
+
+ft_usleep (size_t ms)
+{
+    usleep();
+}

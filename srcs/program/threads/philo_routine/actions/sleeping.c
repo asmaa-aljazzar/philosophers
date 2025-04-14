@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   monitoring.c                                       :+:      :+:    :+:   */
+/*   sleeping.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 11:45:42 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/10 12:20:56 by aaljazza         ###   ########.fr       */
+/*   Created: 2025/04/13 14:22:01 by aaljazza          #+#    #+#             */
+/*   Updated: 2025/04/13 14:25:39 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/philo.h"
+#include "../../../../../includes/philo.h"
 
-void    *monitoring (void *philos)
+void sleeping(t_philo *philo)
 {
-    (void)philos;
-    return NULL;
+    (void)philo;
+
 }

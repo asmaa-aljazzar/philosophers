@@ -14,40 +14,56 @@ CC		= 	cc
 CFLAGS 	= 	-Wall -Wextra -Werror -pthread -g -I
 RM 		= 	rm -f
 
-# Directories
+# Directories ---> paths
 INC			= 	includes/
 SRCS_DIR	=	srcs/
 OBJS_DIR	=	objs/
+PROG		=	$(SRCS_DIR)program/
+INIT		=	$(PROG)init/
+THREAD		=	$(PROG)threads/
+UTIL		=	$(SRCS_DIR)utils/
+PHILO_ROUTINE	=	$(THREAD)philo_routine/
+MONITOR	=	$(THREAD)monitoring/
+ACT	=	$(PHILO_ROUTINE)actions/
 
 # Source Files
 
 #	srcs/
 #	|- program/
 #		|- init/
-#		|- threads/ 
+#		|- threads/
+#			|- philo_routine
+#				|- actions
 #	|- utils/
 
-INIT_DIR	=	$(SRCS_DIR)program/init/input_init.c\
-				$(SRCS_DIR)program/init/forks_init.c\
-				$(SRCS_DIR)program/init/philos_init.c\
-				$(SRCS_DIR)program/init/program_init.c\
+ACTIONS_DIR	=	$(ACT)eating.c\
+				$(ACT)sleeping.c\
+				$(ACT)thinking.c
 
-UTILS_DIR	=	$(SRCS_DIR)utils/ft_atoi.c\
-				$(SRCS_DIR)utils/write_error.c\
-				$(SRCS_DIR)utils/ft_current_time.c\
+PHILO_ROUTINE_DIR	= 	$(ACTIONS_DIR)\
+						$(PHILO_ROUTINE)philo_routine.c
 
-PHILO_ROUTINE_DIR	=	$(SRCS_DIR)program/threads/philo_routine/philo_routine.c\
-						$(SRCS_DIR)program/threads/philo_routine/actions.c
+MONITORING_DIR	=	$(MONITOR)monitoring.c\
 
-THREADS_DIR	=	$(SRCS_DIR)program/threads/monitoring.c\
-				$(SRCS_DIR)program/threads/thread_create.c\
-				$(PHILO_ROUTINE_DIR)
+THREADS_DIR	=	$(PHILO_ROUTINE_DIR)\
+				$(THREAD)monitoring.c\
+				$(THREAD)thread_create.c
+
+INIT_DIR	=	$(INIT)forks_init.c\
+				$(INIT)input_init.c\
+				$(INIT)philos_init.c\
+				$(INIT)program_init.c
 
 PROGRAM_DIR	=	$(INIT_DIR)\
 				$(THREADS_DIR)\
-				$(SRCS_DIR)program/main.c\
-				$(SRCS_DIR)program/destroy_all.c\
-				$(SRCS_DIR)program/check_input.c\
+				$(PROG)check_input.c\
+				$(PROG)destroy_all.c\
+				$(PROG)main.c
+				
+UTILS_DIR	=	$(UTIL)ft_atoi.c\
+				$(UTIL)write_error.c\
+				$(UTIL)ft_current_time.c\
+				$(UTIL)print_msg.c
 
 SRCS	=	$(UTILS_DIR) $(PROGRAM_DIR)
 
@@ -58,10 +74,10 @@ OBJS	=	$(patsubst $(SRCS_DIR)%.c,$(OBJS_DIR)%.o,$(SRCS))
 # start:
 # 	make all
 
-all: $(NAME) $(LIBFT)
+all: $(NAME)
 
 $(NAME): $(OBJS) 
-	$(CC) $(CFLAGS) $(INC) $(OBJS)  -o $(NAME)
+	$(CC) $(CFLAGS) $(INC) $(OBJS) -o $(NAME)
 	@echo "\n[ $(YELLOW)$(NAME) $(RESET)] $(GREEN)has been created!$(RESET)\n"
 
 $(OBJS_DIR)%.o: $(SRCS_DIR)%.c

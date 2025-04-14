@@ -6,13 +6,13 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:49:06 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/06 15:17:43 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/13 14:23:36 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/philo.h"
 
-void    philos_init (t_philo *philo, t_program *program, pthread_mutex_t *forks, char **argv)
+void    philos_init(t_philo *philo, t_program *program, pthread_mutex_t *forks, char **argv)
 {
     int i;
 
@@ -38,3 +38,4 @@ void    philos_init (t_philo *philo, t_program *program, pthread_mutex_t *forks,
         i++;
     }
 }
+

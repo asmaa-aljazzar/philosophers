@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   forks_init.c                                       :+:      :+:    :+:   */
+/*   monitoring.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/03 09:05:41 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/13 14:23:22 by aaljazza         ###   ########.fr       */
+/*   Created: 2025/04/09 11:45:42 by aaljazza          #+#    #+#             */
+/*   Updated: 2025/04/14 17:58:18 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../includes/philo.h"
+#include "../../../../includes/philo.h"
 
-void forks_init(pthread_mutex_t *forks, int num_of_forks)
+void    *monitoring(void *philo_ptr)
 {
-    // No check: if (fork) because we allocate it in main.
-    int i;
-    i = 0;
-    while (i < num_of_forks)
-    {
-        pthread_mutex_init(&forks[i], NULL);
-        i++;
-    }
+   t_philo *philos;
+   philos = (t_philo *)philo_ptr;
+   while (1)
+      if (is_dead(philos) || is_all_eat(philos))
+         break;
+   return (philo_ptr);
 }
