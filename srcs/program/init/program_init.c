@@ -6,10 +6,11 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:47:53 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/13 14:23:43 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:35:32 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// ?Done
 #include "../../../includes/philo.h"
 
 void    program_init(t_program *program, t_philo *philos)

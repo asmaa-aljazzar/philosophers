@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 14:22:01 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/13 14:25:39 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:43:10 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void sleeping(t_philo *philo)
 {
-    (void)philo;
-
+    print_msg ("is sleeping", philo, philo->id);
+    ft_usleep(philo->time_to_sleep);
 }

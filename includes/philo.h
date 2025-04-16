@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/14 19:23:35 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/16 17:04:53 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <pthread.h>
 # include <unistd.h>
 # include <sys/time.h>
+# include <stdlib.h>
 
 //?<<<<<<<<[ Defines ]>>>>>>>>
 # define PHILO_MAX 200
@@ -28,7 +29,6 @@ typedef struct s_philo
 {
     pthread_t thread;
     int id;
-    int dead;
     int eating;
     int meals_done;
     int num_of_philos;
@@ -38,6 +38,7 @@ typedef struct s_philo
     size_t  time_to_eat;
     size_t  time_to_die;
     size_t  time_to_sleep;
+    int *dead;
     pthread_mutex_t  *dead_lock;
     pthread_mutex_t  *left_fork;
     pthread_mutex_t  *right_fork;
@@ -62,6 +63,9 @@ typedef struct s_program
 //- return the number when succes.
 //- return nothing if the input containing a non-numeric character.
 int ft_atoi(char *str);
+
+// calculate the length of a string and return it.
+int ft_strlen(char *str);
 
 // *** check if input is correct *** 
 //- return 0 when success.
@@ -118,5 +122,14 @@ int is_dead(t_philo *philos);
 int is_all_eat(t_philo *philos);
 
 // *** print a messages to descripe the simulation ***
-void    print_msg(char *str, t_philo *philo);
+void    print_msg(char *str, t_philo *philo, int philo_id);
+
+//This function tries to pause execution for a certain number of milliseconds, 
+//but in a more accurate and controlled way than using usleep() alone.
+int ft_usleep (size_t ms);
+
+//- if found a death it will return 1.
+//- else it will return 0.
+int death_found(t_philo *philos);
+
 #endif

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_msg.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 16:16:40 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/16 16:41:18 by aaljazza         ###   ########.fr       */
+/*   Created: 2025/04/14 19:38:58 by aaljazza          #+#    #+#             */
+/*   Updated: 2025/04/14 19:40:36 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
 
-void    print_msg(char *str, t_philo *philo, int philo_id)
+int ft_strlen(char *str)
 {
-    size_t time;
-    time = ft_current_time();
-    pthread_mutex_lock(philo->write_lock);
-    if (!death_found(philo))
-        printf ("%zu %d %s", time, philo_id, str);
-    pthread_mutex_unlock(philo->write_lock);
+    int len;
+    len = 0;
+    while (str)
+    {
+        len++;
+    }
+    printf("len = %d", len);
+    return (len);
 }

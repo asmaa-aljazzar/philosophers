@@ -44,9 +44,12 @@ PHILO_ROUTINE_DIR	= 	$(ACTIONS_DIR)\
 						$(PHILO_ROUTINE)philo_routine.c
 
 MONITORING_DIR	=	$(MONITOR)monitoring.c\
+					$(MONITOR)is_all_eat.c\
+					$(MONITOR)death_found.c\
+					$(MONITOR)is_dead.c\
 
 THREADS_DIR	=	$(PHILO_ROUTINE_DIR)\
-				$(THREAD)monitoring.c\
+				$(MONITORING_DIR)\
 				$(THREAD)thread_create.c
 
 INIT_DIR	=	$(INIT)forks_init.c\
@@ -61,6 +64,8 @@ PROGRAM_DIR	=	$(INIT_DIR)\
 				$(PROG)main.c
 				
 UTILS_DIR	=	$(UTIL)ft_atoi.c\
+				$(UTIL)ft_strlen.c\
+				$(UTIL)ft_usleep.c\
 				$(UTIL)write_error.c\
 				$(UTIL)ft_current_time.c\
 				$(UTIL)print_msg.c

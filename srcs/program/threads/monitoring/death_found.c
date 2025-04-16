@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_msg.c                                        :+:      :+:    :+:   */
+/*   death_found.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 16:16:40 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/16 16:41:18 by aaljazza         ###   ########.fr       */
+/*   Created: 2025/04/16 14:03:14 by aaljazza          #+#    #+#             */
+/*   Updated: 2025/04/16 16:55:12 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/philo.h"
+//? Done
+#include "../../../../includes/philo.h"
 
-void    print_msg(char *str, t_philo *philo, int philo_id)
+
+int death_found(t_philo *philos)
 {
-    size_t time;
-    time = ft_current_time();
-    pthread_mutex_lock(philo->write_lock);
-    if (!death_found(philo))
-        printf ("%zu %d %s", time, philo_id, str);
-    pthread_mutex_unlock(philo->write_lock);
+    pthread_mutex_lock(philos->dead_lock);
+    if (*philos->dead == 1)
+        return (pthread_mutex_unlock(philos->dead_lock), 1);
+    pthread_mutex_unlock(philos->dead_lock);
+    return (0);
 }
