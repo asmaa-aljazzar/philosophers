@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 15:48:50 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/16 16:52:45 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/19 20:20:20 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int is_dead(t_philo *philos)
     {
         if (philo_dead (&philos[i], philos[i].time_to_die))
         {
-            print_msg ("die", &philos[i], philos[i].id); // todo
+            print_msg ("died", &philos[i], philos[i].id); // todo
             pthread_mutex_lock (philos[0].dead_lock);
-            *philos[i].dead = 1;
+            *philos->dead = 1;
             pthread_mutex_unlock (philos[0].dead_lock);
             return (1);
         }

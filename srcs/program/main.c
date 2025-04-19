@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 17:07:11 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/14 10:57:55 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/19 19:20:28 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ int	main(int argc, char **argv)
 			philos_init (philos, &program, forks, argv);
 			thread_create(&program, forks);
 			destroy_all(NULL, &program, forks);
-		}
-		else
-		{
-			write_error ("\e[31m[ invalid input ]\e[0m");
 		}
 	}
 	else

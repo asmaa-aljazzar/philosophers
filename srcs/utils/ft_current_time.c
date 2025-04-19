@@ -6,12 +6,12 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 17:04:09 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/13 14:24:43 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/19 18:55:46 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../includes/philo.h"
-
+//? Done
 size_t    ft_current_time()
 {
     struct timeval time;

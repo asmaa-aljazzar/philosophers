@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/16 17:04:53 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/19 19:07:54 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int ft_strlen(char *str);
 int check_input(char **argv);
 
 // *** print a string on the standard error ***
-void    write_error(char *str);
+int    write_error(char *str);
 
 // *** initialize the program structure using input from the user ***
 void    program_init(t_program *program, t_philo *philos);

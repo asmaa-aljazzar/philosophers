@@ -6,13 +6,13 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:44:56 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/13 14:24:52 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/19 19:07:43 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
-
-void    write_error(char *str)
+// ?Done
+int    write_error(char *str)
 {
     if (str)
     {
@@ -25,4 +25,5 @@ void    write_error(char *str)
         }
         write (2, "\n", 1);
     }
+    return (1);
 }
