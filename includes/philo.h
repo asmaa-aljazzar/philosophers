@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/19 19:07:54 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/20 05:34:57 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void    print_msg(char *str, t_philo *philo, int philo_id);
 
 //This function tries to pause execution for a certain number of milliseconds, 
 //but in a more accurate and controlled way than using usleep() alone.
-int ft_usleep (size_t ms);
+int ft_usleep (size_t ms, t_philo *philo);
 
 //- if found a death it will return 1.
 //- else it will return 0.

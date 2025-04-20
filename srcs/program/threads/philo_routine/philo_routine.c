@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 11:44:31 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/19 20:29:13 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/20 05:36:26 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    *philo_routine (void *philo_ptr)
 
     philo = (t_philo *)philo_ptr;
 	if (philo->id % 2 == 0)
-		ft_usleep(1);
+		ft_usleep(1, philo);
 
 	while (!death_found(philo))
 	{
