@@ -6,7 +6,7 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:57:21 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/20 06:50:15 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/23 06:29:58 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,9 @@ void	*monitoring(void *philos);
 // *** print a messages to descripe the simulation ***
 void	print_msg(char *str, t_philo *philo, int philo_id);
 
+// *** print a string on the standard error ***
+void	write_error(char *str);
+
 // *** convert the string into and integer ***
 //- return the number when succes.
 //- return nothing if the input containing a non-numeric character.
@@ -114,10 +117,12 @@ int		ft_strlen(char *str);
 // *** check if input is correct *** 
 //- return 0 when success.
 //- return non-zero value in case of error
-int		check_input(char **argv);
+int		check_input1(char **argv);
 
-// *** print a string on the standard error ***
-int		write_error(char *str);
+// *** check if input is correct *** 
+//- return 0 when success.
+//- return non-zero value in case of error
+int		check_input2(char **argv);
 
 //This function tries to pause execution for a certain number of milliseconds, 
 //but in a more accurate and controlled way than using usleep() alone.

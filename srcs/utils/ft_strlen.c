@@ -12,14 +12,15 @@
 
 #include "../../includes/philo.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int len;
-    len = 0;
-    while (str)
-    {
-        len++;
-    }
-    printf("len = %d", len);
-    return (len);
+	int	len;
+
+	len = 0;
+	while (str)
+	{
+		len++;
+	}
+	printf("len = %d", len);
+	return (len);
 }

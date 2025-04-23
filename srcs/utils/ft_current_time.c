@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/philo.h"
-//? Done
-size_t    ft_current_time()
+#include "../../includes/philo.h"
+
+size_t	ft_current_time(void)
 {
-    struct timeval time;
-    
-    if (gettimeofday(&time, NULL) == -1)
-        write_error ("\e[31m Error: \e[0m gettimeofday()");
-    return ((time.tv_sec * 1000 ) + (time.tv_usec / 1000));
- }
- 
+	struct timeval	time;
+	int				daytime;
+
+	daytime = gettimeofday (&time, NULL);
+	if (daytime == -1)
+		write_error ("\e[31m Error: \e[0m gettimeofday()");
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
+}

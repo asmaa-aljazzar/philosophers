@@ -10,18 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//?Done
-
 #include "../../../includes/philo.h"
 
 // No check: if (fork) because we allocate it in main.
-void forks_init(pthread_mutex_t *forks, int num_of_forks)
+void	forks_init(pthread_mutex_t *forks, int num_of_forks)
 {
-    int i;
-    i = 0;
-    while (i < num_of_forks)
-    {
-        pthread_mutex_init(&forks[i], NULL);
-        i++;
-    }
+	int	i;
+
+	i = 0;
+	while (i < num_of_forks)
+	{
+		pthread_mutex_init (&forks[i], NULL);
+		i++;
+	}
 }

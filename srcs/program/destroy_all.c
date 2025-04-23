@@ -11,19 +11,20 @@
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
-// ?Done
-void    destroy_all(char *str, t_program *program, pthread_mutex_t *forks)
+
+void	destroy_all(char *str, t_program *program, pthread_mutex_t *forks)
 {
-    int i;
-    i = 0;
-    if (str)
-        write_error (str);
-    pthread_mutex_destroy (&program->write_lock);   
-    pthread_mutex_destroy (&program->pasta_lock);   
-    pthread_mutex_destroy (&program->dead_lock);   
-    while (i < program->philos[0].num_of_philos)
-    {
-        pthread_mutex_destroy (&forks[i]);
-        i++;
-    }
+	int	i;
+
+	i = 0;
+	if (str)
+		write_error (str);
+	pthread_mutex_destroy (&program->write_lock);
+	pthread_mutex_destroy (&program->pasta_lock);
+	pthread_mutex_destroy (&program->dead_lock);
+	while (i < program->philos[0].num_of_philos)
+	{
+		pthread_mutex_destroy (&forks[i]);
+		i++;
+	}
 }

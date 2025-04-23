@@ -15,11 +15,11 @@
 // in case of 2 philo with short time to die and large time to eat/sleep
 // we should check for any die before sleep
 
-int	ft_usleep (size_t ms, t_philo *philo)
+int	ft_usleep(size_t ms, t_philo *philo)
 {
-    size_t	start;
+	size_t	start;
 
-	start = ft_current_time();
+	start = ft_current_time ();
 	while (!death_found(philo) && (ft_current_time() - start) < ms)
 		usleep(500);
 	return (0);

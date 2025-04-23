@@ -6,13 +6,13 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 12:23:07 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/16 16:43:21 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:26:39 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../../../includes/philo.h"
 
-void thinking(t_philo *philo)
+void	thinking(t_philo *philo)
 {
-    print_msg ("is thinking", philo, philo->id);
+	print_msg ("is thinking", philo, philo->id);
 }

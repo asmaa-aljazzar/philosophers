@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "../../includes/philo.h"
-// ?Done
-void    print_msg(char *str, t_philo *philo, int philo_id)
+
+void	print_msg(char *str, t_philo *philo, int philo_id)
 {
-    size_t time;
-    pthread_mutex_lock(philo->write_lock);
-    time = ft_current_time() - philo->start_time;
-    if (!death_found(philo))
-        printf ("%zu %d %s\n", time, philo_id, str);
-    pthread_mutex_unlock(philo->write_lock);
+	size_t	time;
+
+	pthread_mutex_lock (philo->write_lock);
+	time = ft_current_time () - philo->start_time;
+	if (!death_found (philo))
+		printf ("%zu %d %s\n", time, philo_id, str);
+	pthread_mutex_unlock (philo->write_lock);
 }

@@ -6,21 +6,20 @@
 /*   By: aaljazza <aaljazza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 08:47:53 by aaljazza          #+#    #+#             */
-/*   Updated: 2025/04/19 17:03:30 by aaljazza         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:45:20 by aaljazza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ?Done
 #include "../../../includes/philo.h"
 
-void    program_init(t_program *program, t_philo *philos)
+// This array with t_philo type, each one of the array member
+// has a properties and will contain all philo needs.
+
+void	program_init(t_program *program, t_philo *philos)
 {
-    // when this is 1, there is a dead philo.
-    program->dead_flag = 0;
-    // This array with t_philo type, each one of the array member
-    // has a properties and will contain all philo needs.
-    program->philos = philos;
-    pthread_mutex_init(&program->write_lock, NULL);
-    pthread_mutex_init(&program->dead_lock, NULL);
-    pthread_mutex_init(&program->pasta_lock, NULL);
+	program->dead_flag = 0;
+	program->philos = philos;
+	pthread_mutex_init (&program->write_lock, NULL);
+	pthread_mutex_init (&program->dead_lock, NULL);
+	pthread_mutex_init (&program->pasta_lock, NULL);
 }
