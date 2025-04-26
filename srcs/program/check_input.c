@@ -32,7 +32,8 @@ int	check_input1(char **argv)
 		write_error("\e[31m invalid time to eat \e[0m");
 		return (1);
 	}
-	check_input2(argv);
+	if (check_input2(argv) == 1)
+		return (1);
 	return (0);
 }
 // if argv[5] exist but < 0
